@@ -3,8 +3,10 @@ from elasticsearch_dsl import DocType, Text, Date, Integer, Search
 from elasticsearch import Elasticsearch
 from elasticsearch.helpers import bulk
 from . import models
+import settings
 
 connections.create_connection()
+refresh=settings.ES_AUTOREFRESH
 
 class TopStoriesIndex(DocType):
 
